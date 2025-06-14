@@ -1,0 +1,100 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+  <h4>Control Flow Statement</h4>
+  <p>&#64; For, &#64; Switch</p>
+</div>
+
+<div class="row pt-3">
+  <div class="col-3">
+    <input type="text" [(ngModel)]="dayNumber" />
+  </div>
+  <div class="col-3">
+    Day Name is: @switch (dayNumber) { @case ('1') {
+    <span>Monday</span>
+    } @case ('2') {
+    <span>Tuesday</span>
+    } @case ('3') {
+    <span>Wednesday</span>
+    } @case ('4') {
+    <span>Thursday</span>
+    } @case ('5') {
+    <span>Friday</span>
+    } @case ('6') {
+    <span>Saturday</span>
+    } @case ('7') {
+    <span>Sunday</span>
+    } @default {
+    <span>Wrong Entry</span>
+    } }
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    <ul>
+      @for (city of cityList; track $index) {
+      <li>{{ city }}</li>
+      }
+    </ul>
+  </div>
+  <div class="col-3">
+    @for (item of cityList; track $index) {
+    <div>{{ item }}</div>
+    }
+  </div>
+  <div class="col-3">
+    <select name="" id="">
+      @for (item of cityList; track $index) {
+      <option>{{ item }}</option>
+      }
+    </select>
+  </div>
+  <div class="col-3">
+    <select>
+      @for (item of studList; track $index) {
+      <option [value]="item.id">{{ item.name }}</option>
+      }
+    </select>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-5">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Sr No.</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Status</th>
+          <th>Total Marks</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (stud of studList; track $index) {
+        <tr>
+          <td>{{ $index + 1 }}</td>
+          <td>{{ stud.name }}</td>
+          <td>{{ stud.age }}</td>
+          <td
+            [ngStyle]="{
+              'background-color': stud.isActive ? 'green' : 'red'
+            }"
+          >
+            <span>{{ stud.isActive ? "Active" : "De-Active" }}</span>
+          </td>
+          <td>
+            <div class="progress">
+              <div
+                class="progress-bar"
+                [ngStyle]="{ width: stud.totalMarks + '%' }"
+              >
+                {{ stud.totalMarks }}
+              </div>
+            </div>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

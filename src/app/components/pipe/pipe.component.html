@@ -1,0 +1,71 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+  <h4>Control Flow Statement</h4>
+  <p>&#64; For, &#64; Switch</p>
+</div>
+
+<div class="row pt-3">
+  <div class="col-3">
+    Original Value: {{ text }}
+    <br />
+    After pipe: {{ text | uppercase }}
+  </div>
+  <div class="col-3">
+    Original Value: {{ text }}
+    <br />
+    After pipe: {{ text | lowercase }}
+  </div>
+  <div class="col-3">
+    Original Value: {{ text }}
+    <br />
+    After pipe: {{ text | titlecase }}
+  </div>
+  <div class="col-3">
+    Original Value:
+    <br />
+    After pipe:
+  </div>
+</div>
+<br /><br />
+
+<div class="row pt-3">
+  <div class="col-3">
+    Original Value: {{ date }}
+    <br />
+    After pipe: {{ date | date }}
+  </div>
+  <div class="col-3">
+    Original Value: {{ date | date }}
+    <br />
+    After pipe: {{ date | date : "dd-MM-yy" }}
+  </div>
+  <div class="col-3">
+    Original Value: {{ date | date : "dd/MM/yy" }}
+    <br />
+    After pipe: {{ date | date : "dd-MMM-yy" }}
+  </div>
+  <div class="col-3">
+    Original Value:
+    <br />
+    After pipe:
+  </div>
+</div>
+
+<div class="row pt-3">
+  <div class="col-3">
+    Original Value: {{ student }}
+    <br />
+    After pipe: {{ student | json }}
+  </div>
+  <div class="col-3">
+    Original Value: {{ currentTime }}
+    <br />
+    After pipe: {{ currentTime | async }}
+    <br />
+    After pipe: {{ currentTime | async | date : "hh:mm:ss" }}
+  </div>
+  <div class="col-3">
+    Original Value: {{ student.city }}
+    <br />
+    After pipe: {{ student.city | na }}
+  </div>
+</div>
